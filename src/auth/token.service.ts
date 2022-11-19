@@ -3,7 +3,6 @@ import { sign, verify } from 'jsonwebtoken'
 import { PayloadDataDto } from './dtos/payload-data.dto'
 
 class TokenService {
-
   // Generating jwt token
   generateToken(payload: PayloadDataDto): string {
     console.log('Start generating jwt token: ', payload)

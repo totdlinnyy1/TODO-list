@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import { validationResult } from 'express-validator'
 
 import ApiError from '../exceptions/api-error'
+import { StatusCodeEnum } from '../status-code.enum'
 import { IUser } from '../users/models/user.model'
 import usersService from '../users/users.service'
 
@@ -9,7 +10,6 @@ import authService from './auth.service'
 import jwtService from './token.service'
 
 class AuthController {
-
   // POST: Registration
   async signUp(
     req: Request<never, never, IUser>,
@@ -24,7 +24,7 @@ class AuthController {
       const { body } = req
       const user = await usersService.createUser(body)
       const token = jwtService.generateToken({ sub: user._id })
-      await res.json(token)
+      await res.status(StatusCodeEnum.CREATED).json(token)
       next()
     } catch (e) {
       next(e)

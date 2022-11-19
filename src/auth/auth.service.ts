@@ -5,7 +5,6 @@ import { IUser } from '../users/models/user.model'
 import UsersService from '../users/users.service'
 
 class AuthService {
-
   // Validating user login data
   async validateUser(data: IUser): Promise<IUser> {
     console.log('Start validating user: ', data.email)

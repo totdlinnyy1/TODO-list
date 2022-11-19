@@ -2,9 +2,9 @@ import { NextFunction, Request, Response } from 'express'
 
 import tokenService from '../auth/token.service'
 import ApiError from '../exceptions/api-error'
-import usersService from '../users/users.service'
 import { RequestWithUser } from '../types'
 import { UserDto } from '../users/dtos/user.dto'
+import usersService from '../users/users.service'
 
 const authMiddleware = async (
   req: Request,

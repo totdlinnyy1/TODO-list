@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 
-import ApiError, { StatusCodeEnum } from '../exceptions/api-error'
+import ApiError from '../exceptions/api-error'
+import { StatusCodeEnum } from '../status-code.enum'
 
 const errorMiddleware = (
   err: unknown,

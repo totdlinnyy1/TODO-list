@@ -5,7 +5,6 @@ import ApiError from '../exceptions/api-error'
 import UserModel, { IUser } from './models/user.model'
 
 class UsersService {
-
   // Create user function
   async createUser(data: IUser): Promise<IUser> {
     console.log('Start user creating: ', data.email)

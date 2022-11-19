@@ -5,17 +5,25 @@ export interface IUser extends Document {
   password: string
 }
 
-const UserSchema = new Schema<IUser>({
-  email: {
-    type: String,
-    unique: true,
-    required: true
+const UserSchema = new Schema<IUser>(
+  {
+    email: {
+      type: String,
+      unique: true,
+      required: true
+    },
+    password: {
+      type: String,
+      required: true
+    }
   },
-  password: {
-    type: String,
-    required: true
+  {
+    timestamps: {
+      createdAt: 'created_at',
+      updatedAt: 'updated_at'
+    }
   }
-})
+)
 
 const UserModel = model<IUser>('User', UserSchema)
 
