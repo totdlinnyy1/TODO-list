@@ -5,7 +5,6 @@ import * as mongoose from 'mongoose'
 import morgan from 'morgan'
 import swaggerUI from 'swagger-ui-express'
 
-
 import errorMiddleware from './middlewares/error.middleware'
 import router from './router'
 import * as swaggerDocument from './swagger.json'
