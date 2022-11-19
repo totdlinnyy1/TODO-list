@@ -11,9 +11,8 @@ import { DeleteTodoDto } from './dtos/delete-todo.dto'
 import { FindTodoDto } from './dtos/find-todo.dto'
 import TodosService from './todos.service'
 
-
-
 class TodosController {
+  // POST: Create todos
   async createTodo(
     req: Request<never, never, CreateTodoDto>,
     res: Response,
@@ -34,6 +33,7 @@ class TodosController {
     }
   }
 
+  // PUT: Complete todos
   async completeTodo(
     req: Request<never, never, CompleteTodoDto>,
     res: Response,
@@ -54,6 +54,7 @@ class TodosController {
     }
   }
 
+  // DELETE: Delete todos
   async deleteTodo(
     req: Request<never, never, DeleteTodoDto>,
     res: Response,
@@ -74,6 +75,7 @@ class TodosController {
     }
   }
 
+  // GET: Get todos
   async getToDos(
     req: Request,
     res: Response,
