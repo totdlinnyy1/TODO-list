@@ -3,6 +3,8 @@ import * as dotenv from 'dotenv'
 import express, { json } from 'express'
 import * as mongoose from 'mongoose'
 import morgan from 'morgan'
+import swaggerUI from 'swagger-ui-express'
+import * as swaggerDocument from './swagger.json'
 
 import errorMiddleware from './middlewares/error.middleware'
 import router from './router'
@@ -23,6 +25,7 @@ app.use(
   )
 )
 app.use('/api', router)
+app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 app.use(errorMiddleware)
 
 const main = async (): Promise<void> => {
