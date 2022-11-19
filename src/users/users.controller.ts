@@ -1,15 +1,12 @@
 import { NextFunction, Request, Response } from 'express'
-import { IUser } from './models/user.model'
 
+import { RequestWithUser } from '../types'
 
 class UsersController {
-  async me(
-    req: Request,
-    res: Response,
-    next: NextFunction
-  ): Promise<void> {
+  // GET: get user data
+  async me(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const user = (req as Request & {user: IUser}).user
+      const user = (req as RequestWithUser).user
       await res.json(user)
       next()
     } catch (e) {

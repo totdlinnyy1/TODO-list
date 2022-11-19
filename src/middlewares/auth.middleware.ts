@@ -1,8 +1,10 @@
 import { NextFunction, Request, Response } from 'express'
-import ApiError from '../exceptions/api-error'
+
 import tokenService from '../auth/token.service'
+import ApiError from '../exceptions/api-error'
 import usersService from '../users/users.service'
-import { IUser } from '../users/models/user.model'
+import { RequestWithUser } from '../types'
+import { UserDto } from '../users/dtos/user.dto'
 
 const authMiddleware = async (
   req: Request,
@@ -30,7 +32,7 @@ const authMiddleware = async (
       return next(ApiError.unauthorizedError())
     }
 
-    (req as Request & {user: IUser}).user  = user
+    (req as RequestWithUser).user = new UserDto(user)
     next()
   } catch (e) {
     return next(ApiError.unauthorizedError())

@@ -9,6 +9,8 @@ import authService from './auth.service'
 import jwtService from './token.service'
 
 class AuthController {
+
+  // POST: Registration
   async signUp(
     req: Request<never, never, IUser>,
     res: Response,
@@ -29,6 +31,7 @@ class AuthController {
     }
   }
 
+  // POST: Login
   async signIn(
     req: Request<never, never, IUser>,
     res: Response,
