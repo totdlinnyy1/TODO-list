@@ -22,6 +22,10 @@ class UsersService {
   async findUserByEmail(email: string): Promise<IUser | null | undefined> {
     return await UserModel.findOne({ email })
   }
+
+  async findUserById(_id: string): Promise<IUser | null | undefined> {
+    return await UserModel.findOne({ _id })
+  }
 }
 
 export default new UsersService()
