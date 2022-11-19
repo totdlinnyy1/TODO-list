@@ -4,8 +4,8 @@ import express, { json } from 'express'
 import * as mongoose from 'mongoose'
 import morgan from 'morgan'
 
-import router from './router'
 import errorMiddleware from './middlewares/error.middleware'
+import router from './router'
 
 dotenv.config()
 

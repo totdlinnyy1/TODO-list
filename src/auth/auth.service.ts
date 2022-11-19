@@ -1,7 +1,8 @@
+import { compare } from 'bcrypt'
+
+import ApiError from '../exceptions/api-error'
 import { IUser } from '../users/models/user.model'
 import UsersService from '../users/users.service'
-import ApiError from '../exceptions/api-error'
-import {compare} from 'bcrypt'
 
 class AuthService {
   async validateUser(data: IUser): Promise<IUser> {
