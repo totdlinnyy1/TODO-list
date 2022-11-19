@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "npx tsc",
-    "start:prod": "node dist/index.js",
+    "start": "node dist/index.js",
     "start:dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
     "lint": "eslint \"src/**/*.ts*\" --fix",
     "format": "prettier --write \"src/**/*.ts*\"",
@@ -16,7 +16,6 @@
     "commit": "git add . && git cz"
   },
   "dependencies": {
-    "@types/morgan": "^1.9.3",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -29,6 +28,7 @@
     "swagger-ui-express": "^4.6.0"
   },
   "devDependencies": {
+    "@types/morgan": "^1.9.3",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@types/bcrypt": "^5.0.0",
