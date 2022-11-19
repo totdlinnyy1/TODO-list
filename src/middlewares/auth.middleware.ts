@@ -32,7 +32,7 @@ const authMiddleware = async (
       return next(ApiError.unauthorizedError())
     }
 
-    (req as RequestWithUser).user = new UserDto(user)
+    ;(req as RequestWithUser).user = new UserDto(user)
     next()
   } catch (e) {
     return next(ApiError.unauthorizedError())
