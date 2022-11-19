@@ -26,6 +26,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-useless-constructor': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
     camelcase: 'off',
     'no-unsafe-finally': 'off',
     'import/no-extraneous-dependencies': 'off',
@@ -113,7 +114,6 @@ module.exports = {
     '@typescript-eslint/no-invalid-this': 'error',
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
-    '@typescript-eslint/no-misused-promises': 'error',
     '@typescript-eslint/no-magic-numbers': [
       'error',
       {
