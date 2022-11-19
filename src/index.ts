@@ -4,6 +4,9 @@ import express, { json } from 'express'
 import * as mongoose from 'mongoose'
 import morgan from 'morgan'
 
+import errorMiddleware from './middlewares/error.middleware'
+import router from './router'
+
 dotenv.config()
 
 const defaultPort = 3000
@@ -19,6 +22,8 @@ app.use(
     '[:date[iso]] Completed :status :res[content-length] in :response-time ms'
   )
 )
+app.use('/api', router)
+app.use(errorMiddleware)
 
 const main = async (): Promise<void> => {
   try {
